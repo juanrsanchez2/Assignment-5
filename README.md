@@ -1,5 +1,9 @@
 # CS 3360 Assignment #5: Real-Time DAG Multiprocessor Scheduling & Parallel Programming
 
+## Link to main(2.0).cpp and README.md
+https://github.com/juanrsanchez2/Assignment-5/blob/cbbbc73d754909506015d7e12d0237fd3ccbe70d/main(2.0).cpp
+https://github.com/juanrsanchez2/Assignment-5/blob/cbbbc73d754909506015d7e12d0237fd3ccbe70d/README.md
+
 ## Project Overview
 
 This project focuses on real-time (DAG) scheduling and multi-threaded parallel programming.
