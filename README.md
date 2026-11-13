@@ -46,3 +46,27 @@ The program measures and calculates the following metrics:
 
 Execution time is measured in milliseconds using **chrono::steady_clock**.
 
+## Compilation and Execution
+
+The program is written in C++ and uses the standard threading library.
+
+### Running with Code::Blocks
+
+1. Open Code::Blocks.
+2. Open the project containing **main.cpp(2.)**.
+3. Select **Build and Run** (F9).
+4. The program will display the benchmarking results in the console.
+
+### Program Output
+
+The program displays a benchmarking table containing:
+
+- Number of threads
+- Execution time in milliseconds
+- Measured speedup
+- Theoretical Amdahl speedup
+- Parallel efficiency
+
+The execution times may vary between runs depending on system performance.
+
+
