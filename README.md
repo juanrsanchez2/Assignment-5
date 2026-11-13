@@ -127,16 +127,36 @@ The critical path is the longest execution path through the DAG.
 | v₁ → v₃ → v₆ → v₇ | 3 + 6 + 4 + 2 | 15 ms |
 | v₁ → v₄ → v₆ → v₇ | 3 + 5 + 4 + 2 | 14 ms |
 
-The longest path is: 15 ms
-
-
-
+The longest path is 15 ms
 
 #### 3. Deadline Feasibility
 
 For the DAG task to meet its deadline, the critical path length must not exceed the deadline.
 
 The necessary condition is satisfied because the critical path length equals the deadline. However, this does not mean that the entire DAG can be scheduled successfully.
+
+#### 4. High Workload
+
+A DAG task is classified as high workload when **C₁ / D₁ > 1**. Since 27 / 15 = 1.8 and **1.8 > 1**. The DAG is classified as a high-workload task.
+
+#### 5. Federated Scheduling
+
+The number of dedicated cores required under Federated Scheduling is calculated using:
+
+**m₁ = ceil((C₁ - L₁) / (D₁ - L₁))**
+
+Substituting the values:
+
+m₁ = ceil((27 - 15) / (15 - 15))
+
+m₁ = ceil(12 / 0)
+
+Since the denominator is zero, the formula does not produce a finite number of cores.
+
+In this special case, the formula is valid only when the total work equals the critical path length (C₁ = L₁).
+
+Since C₁ = 27 ms and L₁ = 15 ms, the task is **not schedulable under the specified Federated Scheduling policy**.
+
 
 
 
