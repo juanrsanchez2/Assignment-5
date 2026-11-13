@@ -158,6 +158,44 @@ In this special case, the formula is valid only when the total work equals the c
 Since C₁ = 27 ms and L₁ = 15 ms, the task is **not schedulable under the specified Federated Scheduling policy**.
 
 
+### Task 1.2: Amdahl's Law
+
+Amdahl's Law calculates the theoretical speedup of a program based on how much of the program must run sequentially and how much can run in parallel.
+
+**Given:**
+
+- S = 0.20 (20% of the program must run sequentially)
+- 1 - S = 0.80 (80% of the program can run in parallel)
+- N = m₁ (Number of processors)
+
+#### 1. Theoretical Speedup
+
+Amdahl's Law is:
+
+**Speedup(N) = 1 / (S + (1 - S) / N)**
+
+**Putting in the Values:** Speedup(N) = 1 / (0.20 + 0.80 / N)
+
+Since the Federated Scheduling calculation did not produce a finite value for m₁, the theoretical speedup for N = m₁ cannot be determined.
+
+#### 2. Maximum Theoretical Speedup
+
+As the number of processors approaches infinity (N → ∞):
+
+**Maximum Speedup = 1 / S**
+
+**Putting in:** S = 0.20:
+
+Maximum Speedup = 1 / 0.20
+
+**Maximum Speedup = 5.00x**
+
+#### 3. Explanation
+
+Adding more processors reduces the time needed for the parallel part but does not reduce the time required for the sequential part. So this theoretical limit does not change the fact that the DAG task is not schedulable under the specified Federated Scheduling policy.
+
+
+
 
 
 
