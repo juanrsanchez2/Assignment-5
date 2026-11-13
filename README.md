@@ -85,6 +85,60 @@ The program was tested using 1, 2, 4, and 8 threads to compare execution time, m
 
 The results show that execution time decreased as the thread count increased from 1 to 4 threads. However, the 8-thread had a higher execution time than the 4-thread.
 
+## Task 2.1: Data Race Analysis
+
+The original pseudocode contains a data race since multiple threads can access and update the shared variables global_min and global_max at the same time. To stop this, a mutex protects the shared variables when each thread updates the final results, ensuring only one thread can modify them at a time.
+
+## Part 1: Real-Time DAG Scheduling
+
+### Task 1.1: DAG Analysis
+
+**Given in Assignment 5 Description:**
+
+- Deadline: D₁ = 15 ms
+- Period: T₁ = 20 ms
+- Node execution times:
+  - v₁ = 3 ms
+  - v₂ = 4 ms
+  - v₃ = 6 ms
+  - v₄ = 5 ms
+  - v₅ = 3 ms
+  - v₆ = 4 ms
+  - v₇ = 2 ms
+
+#### 1. Total Work (C₁)
+
+The total work is the sum of all node execution times.
+
+
+C_1 = 3 + 4 + 6 + 5 + 3 + 4 + 2
+
+
+C_1 = 27ms
+
+#### 2. Critical Path Length (L₁)
+
+The critical path is the longest execution path through the DAG.
+
+| Path | Calculation | Length |
+|---|---|---|
+| v₁ → v₂ → v₅ → v₇ | 3 + 4 + 3 + 2 | 12 ms |
+| v₁ → v₃ → v₅ → v₇ | 3 + 6 + 3 + 2 | 14 ms |
+| v₁ → v₃ → v₆ → v₇ | 3 + 6 + 4 + 2 | 15 ms |
+| v₁ → v₄ → v₆ → v₇ | 3 + 5 + 4 + 2 | 14 ms |
+
+The longest path is: 15 ms
+
+
+
+
+#### 3. Deadline Feasibility
+
+For the DAG task to meet its deadline, the critical path length must not exceed the deadline.
+
+The necessary condition is satisfied because the critical path length equals the deadline. However, this does not mean that the entire DAG can be scheduled successfully.
+
+
 
 
 
