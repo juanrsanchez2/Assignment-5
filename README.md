@@ -53,7 +53,7 @@ The program is written in C++ and uses the standard threading library.
 ### Running with Code::Blocks
 
 1. Open Code::Blocks.
-2. Open the project containing **main.cpp(2.)**.
+2. Open the project containing **main.cpp(2.0)**.
 3. Select **Build and Run** (F9).
 4. The program will display the benchmarking results in the console.
 
